@@ -19,6 +19,10 @@ public class Main {
                 new Subscription("product", "fetch-product", (body, sender) -> {
                     System.out.println("product: fetch-product");
                     sender.send("display", "SESSION_ID,product,PRODUCT_ID,Coffee");
+                }),
+                new Subscription("product", "fetch-product-page", (body, sender) -> {
+                    System.out.println("product: fetch-product-page");
+                    sender.send("display", "SESSION_ID,product,PRODUCT_ID,Coffee");
                 })
         });
 
